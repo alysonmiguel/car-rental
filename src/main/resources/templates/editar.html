@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymelaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Editar</title>
+</head>
+<body>
+<div class="container card mb-5 mt-2 bg-light">
+    <div class="card-body" >
+        <h1 class="display-4 text-center">Editar veículos</h1>
+        <form th:action="@{/atualizar}"  th:object="${carro}" method="post">
+             <input type="hidden" th:field="*{id}" class="form-control" aria-describedby="emailHelp" placeholder="Seu email"/> <br>
+
+            <div class="form-group">
+                <label> Modelo: </label>
+                <input type="text" th:field="*{modelo}" class="form-control" aria-describedby="emailHelp" placeholder="Seu email"/> <br>
+                <p class="alert alert-warning" role="alert" th:if="${#fields.hasErrors('modelo')}" th:errors="*{modelo}"></p>
+            </div>
+            <div class="form-group">
+                Cor: <input class="form-control" type="text" th:field="*{cor}"/> <br>
+                <p class="alert alert-warning" th:if="${#fields.hasErrors('cor')}" th:errors="*{cor}" />
+            </div>
+            <div class="form-group">
+                Ano Fabricação: <input class="form-control" type="number" th:field="*{anoFabricacao}"/> <br>
+                <p class="alert alert-warning" th:if="${#fields.hasErrors('anoFabricacao')}" th:errors="*{anoFabricacao}" />
+            </div>
+            <div class="form-group">
+                Quantidade de portas: <input class="form-control" type="number" th:field="*{qtdPortas}"/> <br>
+                <p class="alert alert-warning" th:if="${#fields.hasErrors('qtdPortas')}" th:errors="*{qtdPortas}" />
+            </div>
+            <div class="form-group">
+                Quantidade de Lugares: <input class="form-control" type="number" th:field="*{qtdLugares}"/> <br>
+                <p class="alert alert-warning" th:if="${#fields.hasErrors('qtdLugares')}" th:errors="*{qtdLugares}" />
+            </div>
+            <div class="row justify-content-around">
+                <div class="col-4">
+                    <a href="/" class="btn btn-primary btn-lg btn-block" >Voltar</a>
+                </div>
+                <div class="col-4">
+                    <button  class="btn btn-success btn-lg btn-block" type="submit">Cadastrar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</body>
+</html>
