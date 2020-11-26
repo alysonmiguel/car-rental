@@ -46,7 +46,7 @@ public class CarroController {
 
     @RequestMapping("/cadastrar")
     public  String getCadastrar(Model model){
-        var c = new Carro();
+        Carro c = new Carro();
         model.addAttribute("novoCarro", c);
         return "cadastrar";
     }
