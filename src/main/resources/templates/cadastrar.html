@@ -15,7 +15,7 @@
         <form action="#" th:action="@{/salvar}" th:object="${novoCarro}" method="post" >
             <div class="form-group">
                 <label> Modelo: </label>
-                <input type="text" th:field="*{modelo}" class="form-control" aria-describedby="emailHelp" placeholder="Seu email"/> <br>
+                <input type="text" th:field="*{modelo}" class="form-control" /> <br>
                 <p class="alert alert-warning" role="alert" th:if="${#fields.hasErrors('modelo')}" th:errors="*{modelo}"></p>
             </div>
             <div class="form-group">
