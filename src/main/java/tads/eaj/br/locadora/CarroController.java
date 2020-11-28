@@ -1,6 +1,5 @@
 package tads.eaj.br.locadora;
 
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -41,7 +40,7 @@ public class CarroController {
 
         response.addCookie(c);
 
-        return "home";
+        return "home.html";
     }
 
     @RequestMapping("/cadastrar")
