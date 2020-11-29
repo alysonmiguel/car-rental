@@ -27,19 +27,9 @@ public class CarroController {
     }
 
     @RequestMapping("/")
-    public String getHome(Model model, HttpServletResponse response, @CookieValue(value = "ultimaVez", defaultValue = "Primeiro acesso") String ultimaVez) {
+    public String getHome(Model model) {
         List<Carro> carroList = service.findAll();
         model.addAttribute(carroList);
-
-        model.addAttribute("ultimaVez", ultimaVez);
-
-        Date d = new Date();
-        DateFormat dataformatada = new SimpleDateFormat("HH:mm:ss_dd-MM-yyyy");
-        String data = dataformatada.format(d);
-        Cookie c = new Cookie("ultimaVez", data);
-
-        response.addCookie(c);
-
         return "home.html";
     }
 

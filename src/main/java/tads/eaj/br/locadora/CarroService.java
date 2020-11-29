@@ -15,10 +15,6 @@ public class CarroService {
         this.repository = repository;
     }
 
-    public CarroRepository getRepository(){
-        return repository;
-    }
-
     public List<Carro> findAll(){
         return  repository.findAll();
     }

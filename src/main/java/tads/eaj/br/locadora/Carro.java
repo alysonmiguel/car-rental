@@ -29,16 +29,16 @@ public class Carro {
     @NotBlank(message = ApiMensagens.CAMPO_VAZIO)
     String cor;
 
-    @Min(value = 1500, message = "O ano de fabricação deve ser maior que 1500")
-    @Max(value = 2020, message = "O ano de fabricação dever ser menor que 2020")
+    @Min(value = 1500, message = ApiMensagens.ANO_MINIMO)
+    @Max(value = 2020, message = ApiMensagens.ANO_MAXIMO)
     @NotNull(message = ApiMensagens.CAMPO_VAZIO)
     Integer anoFabricacao;
 
-    @Min(value = 2, message = "O carro de ter no mínimo 2 portas")
+    @Min(value = 2, message = ApiMensagens.QTDP_MINIMO)
     @NotNull(message = ApiMensagens.CAMPO_VAZIO)
     Integer qtdPortas;
 
-    @Min(value = 2, message = "O carro de ter no mínimo 2 lugares para sentar")
+    @Min(value = 2, message = ApiMensagens.QTDL_MINIMO)
     @NotNull(message = ApiMensagens.CAMPO_VAZIO)
     Integer qtdLugares;
 }
